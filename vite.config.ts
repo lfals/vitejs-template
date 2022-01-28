@@ -4,7 +4,11 @@ import path from 'path'
 
 export default defineConfig({
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, '/src')}]
+    alias: {
+        '@': path.resolve(__dirname, './src'),
+        '@components': path.resolve(__dirname, './src/components'),
+        '@view': path.resolve(__dirname, './src/view')
+    },
   },
   plugins: [react()]
 })
