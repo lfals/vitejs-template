@@ -1,15 +1,23 @@
 import React from "react";
-import { Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
-import { Home } from '@view'
+import { Dashboard, Home } from '@view'
 
 const Routes = () => {
    return(
-       <Switch>
+       <BrowserRouter>
+           <Switch>
            <Route exact path="/">
                <Home />
            </Route>
+           <Route path="/dashboard">
+               <Dashboard />
+           </Route>
+           <Route path="/*">
+               <Redirect to="/" />
+           </Route>
        </Switch>
+       </BrowserRouter>
    )
 }
 
